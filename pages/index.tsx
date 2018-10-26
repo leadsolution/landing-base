@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.scss";
 
 interface Props {
 
@@ -22,7 +23,7 @@ export default class Index extends React.Component<Props, State> {
     const { count } = this.state
 
     return (
-      <a href="#" onClick={this.onClick.bind(this)}>{count}</a>
+      <a href="#" className="btn btn-primary" onClick={this.onClick.bind(this)}>{count}</a>
     );
   }
 }
