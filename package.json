@@ -1,0 +1,25 @@
+{
+  "name": "landing-base",
+  "version": "1.0.0",
+  "description": "A Landing Base Starter",
+  "main": "pages/index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leadsolution/landing-base.git"
+  },
+  "keywords": [
+    "leadsolution",
+    "lead",
+    "landing",
+    "page"
+  ],
+  "author": "leadsolution <contato@leadsolution.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leadsolution/landing-base/issues"
+  },
+  "homepage": "https://github.com/leadsolution/landing-base#readme"
+}
