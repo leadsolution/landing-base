@@ -1,29 +1,21 @@
 import React from "react";
-import "./index.scss";
 import Head from "next/head";
 import Form from "../components/form";
+import ReactGA from "react-ga";
+import ReactPixel from "react-facebook-pixel";
 
-interface Props {
+import "./index.scss";
 
-}
+export default class Index extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize("");
+    ReactGA.pageview(window.location.pathname);
 
-interface State {
-  count: number;
-}
-
-export default class Index extends React.Component<Props, State> {
-  state = {
-    count: 0
-  }
-
-  onClick(event: React.MouseEvent<HTMLAnchorElement>) {
-    event.preventDefault();
-    this.setState({ count: this.state.count + 1 });
+    ReactPixel.init("");
+    ReactPixel.pageView();
   }
 
   render() {
-    const { count } = this.state
-
     return (
       <div>
         <Head></Head>
