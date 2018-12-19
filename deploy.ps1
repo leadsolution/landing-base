@@ -1,4 +1,4 @@
-ssh landings @"
+ssh lp @"
   cd /var/www/landing_page
   git stash
   git pull origin master
