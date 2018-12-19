@@ -2,7 +2,10 @@ import Head from "next/head";
 import React from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import Form from "../components/form";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import Hero from "../components/hero";
+import Main from "../components/main";
 import "./index.scss";
 
 export default class Index extends React.Component {
@@ -22,9 +25,11 @@ export default class Index extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <title>Landing_Base</title>
         </Head>
-        <main role="main">
-          <Form />
-        </main>
+
+        <Header />
+        <Hero />
+        <Main />
+        <Footer />
       </>
     );
   }

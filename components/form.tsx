@@ -1,11 +1,10 @@
-import React, { FormEvent } from "react";
-import Cleave from "cleave.js/react";
 import "cleave.js/dist/addons/cleave-phone.br";
-import ReactGA from "react-ga";
+import Cleave from "cleave.js/react";
+import React, { FormEvent } from "react";
 import ReactPixel from "react-facebook-pixel";
-import { LeadsolutionResponse } from "../types";
+import ReactGA from "react-ga";
 import { discoverSource, formDataToUrlSearchParams } from "../helpers";
-
+import { LeadsolutionResponse } from "../types";
 import "./form.scss";
 
 enum FormState {
