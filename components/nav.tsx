@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Nav extends React.Component {
+export default class Nav extends React.PureComponent {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">

@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./form";
 
-export default class Hero extends React.Component {
+export default class Hero extends React.PureComponent {
   render() {
     return (
       <section className="hero">

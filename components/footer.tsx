@@ -1,15 +1,11 @@
 import React from "react";
 
-export default class Footer extends React.Component {
+export default class Footer extends React.PureComponent {
   render() {
     return (
-      <footer>
+      <footer className="footer">
         <div className="container">
-          <div className="row">
-            <div className="col">
-              Footer
-            </div>
-          </div>
+          &copy; 2019
         </div>
       </footer>
     );

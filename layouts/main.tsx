@@ -5,7 +5,7 @@ import ReactGA from "react-ga";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
-export default class Main extends React.Component {
+export default class Main extends React.PureComponent {
   componentDidMount() {
     ReactGA.initialize("");
     ReactPixel.init("");
@@ -28,7 +28,7 @@ export default class Main extends React.Component {
         </Head>
 
         <Header />
-        {children}
+        <main className="content" role="main">{children}</main>
         <Footer />
       </>
     );
