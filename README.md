@@ -5,7 +5,7 @@ A Landing Page Starter
 
 ## Usage
 
-1. Clone it `git clone https://github.com/leadsolution/landing-base.git my-landing-page`
+1. [Download](https://github.com/leadsolution/landing-base/archive/master.zip)
 1. `cd my-landing-page`
 1. `npm install`
 1. `npm run dev`
