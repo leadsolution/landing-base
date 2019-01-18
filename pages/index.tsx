@@ -27,7 +27,7 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="row">
               {this.kards.map(props =>
-                <div className="col-md">
+                <div className="col-lg-4 py-3">
                   <Kard {...props} />
                 </div>
               )}

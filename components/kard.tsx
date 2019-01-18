@@ -16,7 +16,7 @@ export default class Kard extends React.PureComponent<KardProps> {
     return (
       <div className="kard">
         <div className="img">
-          <img src={img.src} alt={img.alt} className="img-fluid" />
+          <img src={img.src} alt={img.alt} className="img-fluid rounded-circle" />
         </div>
         <h5>{title}</h5>
         <p>{body}</p>
