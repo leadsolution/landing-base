@@ -7,11 +7,8 @@ import "../styles.scss";
 
 export default class Index extends React.Component {
   componentDidMount() {
-    ReactGA.initialize("");
     ReactGA.pageview(window.location.pathname);
-
-    ReactPixel.init("");
-    ReactPixel.pageView();
+    ReactPixel.pageView(window.location.pathname);
   }
 
   render() {

@@ -8,10 +8,7 @@ import Header from "../components/header";
 export default class Main extends React.Component {
   componentDidMount() {
     ReactGA.initialize("");
-    ReactGA.pageview(window.location.pathname);
-
     ReactPixel.init("");
-    ReactPixel.pageView();
   }
 
   render() {
