@@ -5,7 +5,6 @@ import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import { discoverSource, formDataToUrlSearchParams } from "../helpers";
 import { LeadsolutionResponse } from "../types";
-import "./form.scss";
 
 enum FormState {
   Waiting,
@@ -76,21 +75,21 @@ export default class Form extends React.Component<any, State> {
     return (
       <div className="form-container">
         <form role="form" onSubmit={this.submit.bind(this)}>
-          <input type="hidden" name="source" value={discoverSource("AABBCCC")} />
+          <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
 
           <div className="form-group">
             <label htmlFor="name">Nome</label>
-            <input type="text" name="name" id="name" className="form-control" />
+            <input type="text" name="name" id="name" className="form-control" required />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" id="email" className="form-control" />
+            <input type="email" name="email" id="email" className="form-control" required />
           </div>
 
           <div className="form-group">
             <label htmlFor="phone_number">Telefone</label>
-            <Cleave type="tel" name="phone_number" id="phone_number" className="form-control" options={{ phone: true, phoneRegionCode: "br" }} />
+            <Cleave type="tel" name="phone_number" id="phone_number" className="form-control" options={{ phone: true, phoneRegionCode: "br" }} required />
           </div>
 
           <button type="submit" className="btn btn-primary">Enviar</button>

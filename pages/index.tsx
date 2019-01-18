@@ -1,12 +1,9 @@
-import Head from "next/head";
 import React from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import Footer from "../components/footer";
-import Header from "../components/header";
 import Hero from "../components/hero";
-import Main from "../components/main";
-import "./index.scss";
+import Main from "../layouts/main";
+import "../styles.scss";
 
 export default class Index extends React.Component {
   componentDidMount() {
@@ -19,18 +16,9 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <>
-        <Head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <title>Landing_Base</title>
-        </Head>
-
-        <Header />
+      <Main>
         <Hero />
-        <Main />
-        <Footer />
-      </>
+      </Main>
     );
   }
 }

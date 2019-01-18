@@ -1,6 +1,5 @@
 import React from "react";
 import Form from "./form";
-import "./hero.scss";
 
 export default class Hero extends React.Component {
   render() {
