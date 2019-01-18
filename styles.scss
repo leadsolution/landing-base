@@ -12,7 +12,7 @@
   }
 }
 
-.content {
+.main {
 
 }
 
@@ -21,6 +21,26 @@
 
   .img {
     margin-bottom: $spacer;
+  }
+}
+
+.splitter {
+  &:nth-child(even) {
+    .row {
+      flex-direction: row-reverse;
+    }
+
+    @include media-breakpoint-up(lg) {
+      text-align: right;
+    }
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .content {
+    padding: $spacer * 2;
   }
 }
 

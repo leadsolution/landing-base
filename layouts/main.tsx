@@ -28,7 +28,7 @@ export default class Main extends React.PureComponent {
         </Head>
 
         <Header />
-        <main className="content" role="main">{children}</main>
+        <main className="main" role="main">{children}</main>
         <Footer />
       </>
     );
