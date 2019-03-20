@@ -92,7 +92,7 @@ export default class Form extends React.Component<any, State> {
 class Loading extends React.PureComponent {
   render() {
     return (
-      <div className="loading">
+      <div className="form-state loading">
         <p>Enviando...</p>
       </div>
     );
@@ -102,7 +102,7 @@ class Loading extends React.PureComponent {
 class Success extends React.PureComponent {
   render() {
     return (
-      <div className="success">
+      <div className="form-state success">
         <p>Enviado com sucesso.</p>
       </div>
     );
@@ -112,7 +112,7 @@ class Success extends React.PureComponent {
 class Failure extends React.PureComponent {
   render() {
     return (
-      <div className="failure">
+      <div className="form-state failure">
         <p>Erro ao enviar. Por favor, tente novamente mais tarde.</p>
       </div>
     );
