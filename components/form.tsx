@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import { discoverSource, formDataToUrlSearchParams } from "../helpers";
@@ -12,21 +12,15 @@ enum FormState {
   Failure
 }
 
-type State = {
-  formState: FormState;
-};
+export default function Form() {
+  const [formState, setFormState] = useState(FormState.Waiting);
 
-export default class Form extends React.Component<any, State> {
-  state = {
-    formState: FormState.Waiting
-  };
-
-  async submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     try {
       console.info("Submitting...");
-      this.setState({ formState: FormState.Loading });
+      setFormState(FormState.Loading);
 
       const response = await fetch("https://brasil.leadsolution.com.br/leads", {
         method: "POST",
@@ -41,80 +35,72 @@ export default class Form extends React.Component<any, State> {
         ReactGA.event({ category: "engagement", action: "generate_lead" });
         ReactPixel.track("Lead");
 
-        data.pixels.forEach(this.insertPixelOrTag);
-        data.tags.forEach(this.insertPixelOrTag);
+        data.pixels.forEach(insertPixelOrTag);
+        data.tags.forEach(insertPixelOrTag);
 
-        this.setState({ formState: FormState.Success });
+        setFormState(FormState.Success);
       } else {
-        this.setState({ formState: FormState.Failure });
+        setFormState(FormState.Failure);
       }
     } catch (error) {
       console.error(error);
-      this.setState({ formState: FormState.Failure });
+      setFormState(FormState.Failure);
     }
   }
 
-  private insertPixelOrTag(pixelOrTag: string) {
+  function insertPixelOrTag(pixelOrTag: string) {
     document.body.insertAdjacentHTML("beforeend", pixelOrTag);
   }
 
-  render() {
-    if (this.state.formState === FormState.Loading) {
-      return <Loading />;
-    }
-
-    if (this.state.formState === FormState.Success) {
-      return <Success />;
-    }
-
-    if (this.state.formState === FormState.Failure) {
-      return <Failure />;
-    }
-
-    return (
-      <div className="form-container">
-        <form role="form" onSubmit={this.submit.bind(this)}>
-          <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
-
-          <FormField name="name" label="Nome" />
-          <FormField name="email" label="E-mail" type="email" />
-          <FormField name="phone_number" label="Telefone" type="tel" />
-
-          <button type="submit" className="btn btn-primary">
-            Enviar
-          </button>
-        </form>
-      </div>
-    );
+  if (formState === FormState.Loading) {
+    return <Loading />;
   }
+
+  if (formState === FormState.Success) {
+    return <Success />;
+  }
+
+  if (formState === FormState.Failure) {
+    return <Failure />;
+  }
+
+  return (
+    <div className="form-container">
+      <form role="form" onSubmit={submit}>
+        <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
+
+        <FormField name="name" label="Nome" />
+        <FormField name="email" label="E-mail" type="email" />
+        <FormField name="phone_number" label="Telefone" type="tel" />
+
+        <button type="submit" className="btn btn-primary">
+          Enviar
+        </button>
+      </form>
+    </div>
+  );
 }
 
-class Loading extends React.PureComponent {
-  render() {
-    return (
-      <div className="form-state loading">
-        <p>Enviando...</p>
-      </div>
-    );
-  }
+function Loading() {
+  return (
+    <div className="form-state loading">
+      <p>Enviando...</p>
+    </div>
+  );
 }
 
-class Success extends React.PureComponent {
-  render() {
-    return (
-      <div className="form-state success">
-        <p>Enviado com sucesso.</p>
-      </div>
-    );
-  }
+function Success() {
+  return (
+    <div className="form-state success">
+      <p>Enviado com sucesso.</p>
+    </div>
+  );
 }
 
-class Failure extends React.PureComponent {
-  render() {
-    return (
-      <div className="form-state failure">
-        <p>Erro ao enviar. Por favor, tente novamente mais tarde.</p>
-      </div>
-    );
-  }
+function Failure() {
+  return (
+    <div className="form-state failure">
+      <p>Erro ao enviar. Por favor, tente novamente mais tarde.</p>
+    </div>
+  );
 }
