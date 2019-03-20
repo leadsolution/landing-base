@@ -1,3 +1,7 @@
+Write-Output "Pushing..."
+git push origin master
+
+Write-Output "Pulling..."
 ssh lp @"
   cd /var/www/landing_page
   git stash
@@ -6,4 +10,6 @@ ssh lp @"
   yarn build
   yarn export
 "@
-start "http://landing_page_url"
+
+Write-Output "Here we go!"
+Start-Process "http://landing_page_url"
