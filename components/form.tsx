@@ -1,26 +1,25 @@
-import "cleave.js/dist/addons/cleave-phone.br";
-import Cleave from "cleave.js/react";
 import React, { FormEvent } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import { discoverSource, formDataToUrlSearchParams } from "../helpers";
 import { LeadsolutionResponse } from "../types";
+import FormField from "./form-field";
 
 enum FormState {
   Waiting,
   Loading,
   Success,
-  Failure,
+  Failure
 }
 
 type State = {
-  formState: FormState
-}
+  formState: FormState;
+};
 
 export default class Form extends React.Component<any, State> {
   state = {
-    formState: FormState.Waiting,
-  }
+    formState: FormState.Waiting
+  };
 
   async submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -32,7 +31,7 @@ export default class Form extends React.Component<any, State> {
       const response = await fetch("https://brasil.leadsolution.com.br/leads", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formDataToUrlSearchParams(new FormData(event.currentTarget)),
+        body: formDataToUrlSearchParams(new FormData(event.currentTarget))
       });
 
       const data: LeadsolutionResponse = await response.json();
@@ -61,15 +60,15 @@ export default class Form extends React.Component<any, State> {
 
   render() {
     if (this.state.formState === FormState.Loading) {
-      return <Loading />
+      return <Loading />;
     }
 
     if (this.state.formState === FormState.Success) {
-      return <Success />
+      return <Success />;
     }
 
     if (this.state.formState === FormState.Failure) {
-      return <Failure />
+      return <Failure />;
     }
 
     return (
@@ -77,22 +76,13 @@ export default class Form extends React.Component<any, State> {
         <form role="form" onSubmit={this.submit.bind(this)}>
           <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
 
-          <div className="form-group">
-            <label htmlFor="name">Nome</label>
-            <input type="text" name="name" id="name" className="form-control" required />
-          </div>
+          <FormField name="name" label="Nome" />
+          <FormField name="email" label="E-mail" type="email" />
+          <FormField name="phone_number" label="Telefone" type="tel" />
 
-          <div className="form-group">
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" id="email" className="form-control" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="phone_number">Telefone</label>
-            <Cleave type="tel" name="phone_number" id="phone_number" className="form-control" options={{ phone: true, phoneRegionCode: "br" }} required />
-          </div>
-
-          <button type="submit" className="btn btn-primary">Enviar</button>
+          <button type="submit" className="btn btn-primary">
+            Enviar
+          </button>
         </form>
       </div>
     );
