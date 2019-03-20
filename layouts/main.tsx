@@ -1,11 +1,16 @@
 import Head from "next/head";
-import React, { PropsWithChildren, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
-export default function Main({ children }: PropsWithChildren<{}>) {
+type MainProps = {
+  title: string;
+  children: React.ReactNode;
+};
+
+export default function Main({ title, children }: MainProps) {
   useEffect(() => {
     ReactGA.initialize("");
     ReactPixel.init("");
@@ -17,7 +22,7 @@ export default function Main({ children }: PropsWithChildren<{}>) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <title>Landing_Base</title>
+        <title>{title}</title>
 
         <script
           src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

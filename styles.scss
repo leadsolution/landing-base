@@ -1,12 +1,27 @@
 @import "./variables";
 
 .header {
+  background-color: $secondary;
+  border-bottom: 3px solid $primary;
+
   .navbar {
+    .navbar-brand {
+      img {
+        max-height: 50px;
+      }
+    }
   }
 }
 
 .hero {
-  .form-containter {
+  .form-container {
+    padding: $spacer * 3;
+    background: $light;
+    border-radius: $border-radius;
+
+    legend {
+      text-align: center;
+    }
   }
 
   .form-state {
@@ -45,4 +60,12 @@
 }
 
 .footer {
+  padding: $spacer;
+  border-top: 3px solid $primary;
+  background-color: $secondary;
+  text-align: center;
+
+  .logo {
+    max-height: 50px;
+  }
 }

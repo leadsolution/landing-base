@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <a className="navbar-brand" href="#">
-        Brand
+        <img src="/static/img/logo.png" alt="Landing_base" className="img-fluid" />
       </a>
 
       <button

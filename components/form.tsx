@@ -67,6 +67,8 @@ export default function Form() {
   return (
     <div className="form-container">
       <form role="form" onSubmit={submit}>
+        <legend>Lorem ipsum</legend>
+
         <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
 
         <FormField name="name" label="Nome" />

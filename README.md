@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="static/img/logo.png" height="300" />
+</p>
+
 # Landing Base
+
 A Landing Page Starter
 
 [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/) & [SASS](https://sass-lang.com/) (w/ [Bootstrap](https://getbootstrap.com/))

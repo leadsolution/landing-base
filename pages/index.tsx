@@ -70,7 +70,7 @@ export default function Index() {
   });
 
   return (
-    <Main>
+    <Main title="Landing_base">
       <Hero />
 
       <section className="kards">
