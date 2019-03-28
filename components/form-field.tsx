@@ -1,5 +1,6 @@
 import "cleave.js/dist/addons/cleave-phone.br";
 import Cleave from "cleave.js/react";
+import React from "react";
 
 type FormFieldProps = {
   name: string;
@@ -11,7 +12,7 @@ type FormFieldProps = {
   disabled?: boolean;
 };
 
-export default function FormField({ name, label, type = "text", required = true, children = [], placeholder = undefined, disabled = false }: FormFieldProps) {
+export default function FormField({name, label, type = "text", required = true, children = [], placeholder = undefined, disabled = false}: FormFieldProps) {
   function input() {
     switch (type) {
       case "tel":
@@ -24,7 +25,7 @@ export default function FormField({ name, label, type = "text", required = true,
             required={required}
             disabled={disabled}
             placeholder={placeholder}
-            options={{ phone: true, phoneRegionCode: "br" }}
+            options={{phone: true, phoneRegionCode: "br"}}
           />
         );
 
@@ -66,12 +67,31 @@ export default function FormField({ name, label, type = "text", required = true,
             required={required}
             disabled={disabled}
             placeholder={placeholder}
-            options={{ blocks: [5, 3], delimiter: "-", numericOnly: true }}
+            options={{blocks: [5, 3], delimiter: "-", numericOnly: true}}
+          />
+        );
+
+      case "date":
+        return (
+          <Cleave
+            type="tel"
+            className="form-control"
+            id={name}
+            name={name}
+            required={required}
+            disabled={disabled}
+            placeholder={placeholder}
+            options={{
+              blocks: [2, 2, 4],
+              delimiters: ["/", "/"],
+              numericOnly: true
+            }}
           />
         );
 
       default:
-        return <input type={type} className="form-control" id={name} name={name} required={required} disabled={disabled} placeholder={placeholder} />;
+        return <input type={type} className="form-control" id={name} name={name} required={required} disabled={disabled}
+                      placeholder={placeholder}/>;
     }
   }
 
