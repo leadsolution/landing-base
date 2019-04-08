@@ -13,20 +13,20 @@ export default function Index() {
       img: { src: "http://lorempixel.com/128/128/cats/", alt: "Example" },
       title: "Lorem ipsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
     },
     {
       img: { src: "http://lorempixel.com/128/128/cats/", alt: "Example" },
       title: "Lorem ipsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
     },
     {
       img: { src: "http://lorempixel.com/128/128/cats/", alt: "Example" },
       title: "Lorem ipsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
-    }
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
+    },
   ];
 
   const splitters: SplitterProps[] = [
@@ -36,7 +36,7 @@ export default function Index() {
       img: { src: "http://lorempixel.com/1280/768/cats/", alt: "Example" },
       title: "Lorem impsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
     },
     {
       fluid: false,
@@ -44,7 +44,7 @@ export default function Index() {
       img: { src: "http://lorempixel.com/1280/768/cats/", alt: "Example" },
       title: "Lorem impsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
     },
     {
       fluid: true,
@@ -52,7 +52,7 @@ export default function Index() {
       img: { src: "http://lorempixel.com/1280/768/cats/", alt: "Example" },
       title: "Lorem impsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
     },
     {
       fluid: true,
@@ -60,14 +60,14 @@ export default function Index() {
       img: { src: "http://lorempixel.com/1280/768/cats/", alt: "Example" },
       title: "Lorem impsum",
       body:
-        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor."
-    }
+        "Quisque at risus non lacus commodo pretium ut eget eros. Nunc at sollicitudin nisl. In lobortis mollis tellus, ut ultrices sem gravida nec. Pellentesque tristique varius urna eu tempor.",
+    },
   ];
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
     ReactPixel.pageView(window.location.pathname);
-  });
+  }, []);
 
   return (
     <Main title="Landing_base">
