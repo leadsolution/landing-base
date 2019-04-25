@@ -40,7 +40,7 @@ export default function FormField({
       case "tax":
         return (
           <Cleave
-            type="tel"
+            type="text"
             className="form-control"
             id={name}
             name={name}
@@ -87,7 +87,7 @@ export default function FormField({
       case "date":
         return (
           <Cleave
-            type="tel"
+            type="text"
             className="form-control"
             id={name}
             name={name}
