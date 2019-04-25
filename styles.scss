@@ -1,8 +1,8 @@
 @import "./variables";
 
 .header {
-  background-color: $secondary;
-  border-bottom: 3px solid $primary;
+  background-color: $primary;
+  padding: $spacer;
 
   .navbar {
     .navbar-brand {
@@ -15,7 +15,7 @@
 
 .hero {
   .form-container {
-    padding: $spacer * 3;
+    padding: $spacer;
     background: $light;
     border-radius: $border-radius;
 
@@ -25,37 +25,9 @@
   }
 
   .form-state {
-  }
-}
-
-.main {
-}
-
-.kard {
-  text-align: center;
-
-  .img {
-    margin-bottom: $spacer;
-  }
-}
-
-.splitter {
-  &:nth-child(even) {
-    .row {
-      flex-direction: row-reverse;
-    }
-
-    @include media-breakpoint-up(lg) {
-      text-align: right;
-    }
-  }
-
-  .row {
-    align-items: center;
-  }
-
-  .content {
-    padding: $spacer * 2;
+    padding: $spacer;
+    background: $light;
+    border-radius: $border-radius;
   }
 }
 
