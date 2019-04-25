@@ -114,6 +114,29 @@ export default function FormField({
           />
         );
 
+      case "money":
+      case "currency":
+        return (
+          <Cleave
+            type="text"
+            className="form-control"
+            id={name}
+            name={name}
+            required={required}
+            disabled={disabled}
+            placeholder={placeholder}
+            options={{
+              prefix: 'R$ ',
+              numeral: true,
+              numeralThousandsGroupStyle: 'thousand',
+              numeralPositiveOnly: true,
+              numeralDecimalMark: ',',
+              numeralDecimalScale: 2,
+              delimiter: '.',
+            }}
+          />
+        );
+
       default:
         return (
           <input
