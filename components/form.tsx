@@ -13,7 +13,7 @@ enum FormState {
 }
 
 export default function Form() {
-  const [formState, setFormState] = useState(FormState.Waiting);
+  const [formState, setFormState] = useState(FormState.Loading);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -87,6 +87,12 @@ function Loading() {
   return (
     <div className="form-state loading">
       <p>Enviando...</p>
+      <div className="distractor">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 }
