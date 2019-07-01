@@ -37,7 +37,7 @@ export default function FormField({
           />
         );
 
-      case "tax":
+      case "itr":
         return (
           <Cleave
             type="text"
@@ -50,6 +50,24 @@ export default function FormField({
             options={{
               blocks: [3, 3, 3, 2],
               delimiters: [".", ".", "-"],
+              numericOnly: true,
+            }}
+          />
+        );
+
+      case "ftin":
+        return (
+          <Cleave
+            type="text"
+            className="form-control"
+            id={name}
+            name={name}
+            required={required}
+            disabled={disabled}
+            placeholder={placeholder}
+            options={{
+              blocks: [2, 3, 3, 4, 2],
+              delimiters: [".", ".", "/", "-"],
               numericOnly: true,
             }}
           />
