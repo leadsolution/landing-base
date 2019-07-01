@@ -1,19 +1,20 @@
-import React, { FormEvent, useState } from "react";
+import React, {FormEvent, useState} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import { discoverSource, formDataToUrlSearchParams } from "../helpers";
-import { LeadsolutionResponse } from "../types";
+import {discoverSource, formDataToUrlSearchParams} from "../helpers";
+import {LeadsolutionResponse} from "../types";
 import FormField from "./form-field";
 
 enum FormState {
-  Waiting,
+  Default,
   Loading,
   Success,
   Failure
 }
 
 export default function Form() {
-  const [formState, setFormState] = useState(FormState.Loading);
+  const [formState, setFormState] = useState<FormState>(FormState.Default);
+  const [failureMessage, setFailureMessage] = useState<string>('Erro ao enviar. Por favor, tente novamente mais tarde.');
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,6 +41,10 @@ export default function Form() {
 
         setFormState(FormState.Success);
       } else {
+        if (data.errors[0] === 'duplicated lead') {
+          setFailureMessage('E-mail já registrado em nossa base.');
+        }
+
         setFormState(FormState.Failure);
       }
     } catch (error) {
@@ -61,7 +66,7 @@ export default function Form() {
   }
 
   if (formState === FormState.Failure) {
-    return <Failure />;
+    return <Failure message={failureMessage}/>;
   }
 
   return (
@@ -69,7 +74,7 @@ export default function Form() {
       <form role="form" onSubmit={submit}>
         <legend>Lorem ipsum</legend>
 
-        <input type="hidden" name="source" value={discoverSource("AABBCCC")} required />
+        <input type="hidden" name="source" value={discoverSource("TTTTTSX")} required/>
 
         <FormField name="name" label="Nome" />
         <FormField name="email" label="E-mail" type="email" />
@@ -105,10 +110,10 @@ function Success() {
   );
 }
 
-function Failure() {
+function Failure(props: { message: string }) {
   return (
     <div className="form-state failure">
-      <p>Erro ao enviar. Por favor, tente novamente mais tarde.</p>
+      <p>{props.message}</p>
     </div>
   );
 }
