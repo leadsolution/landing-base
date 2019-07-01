@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import Hero from "../components/hero";
@@ -14,6 +14,58 @@ export default function Index() {
   return (
     <Main title="Landing_base">
       <Hero />
+      <div>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+        lalralra<br/>
+      </div>
     </Main>
   );
 }
