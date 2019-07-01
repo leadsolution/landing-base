@@ -80,8 +80,8 @@ export default function Form() {
         <FormField name="email" label="E-mail" type="email" />
         <FormField name="phone_number" label="Telefone" type="tel" />
 
-        <button type="submit" className="btn btn-primary">
-          Enviar
+        <button type="submit" className="btn btn-block btn-lg btn-primary">
+          QUERO AGORA
         </button>
       </form>
     </div>

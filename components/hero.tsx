@@ -6,7 +6,10 @@ export default function Hero() {
     <div className="hero">
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-lg-6 col-xl-7">
+          </div>
+
+          <div className="col-lg-6 col-xl-5">
             <Form />
           </div>
         </div>

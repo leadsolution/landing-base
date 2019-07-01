@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="#">
         <img src="/static/img/logo.png" alt="Landing_base" className="img-fluid" />
       </a>
