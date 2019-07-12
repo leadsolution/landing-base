@@ -1,6 +1,5 @@
 import "cleave.js/dist/addons/cleave-phone.br";
 import Cleave from "cleave.js/react";
-import React from "react";
 
 type FormFieldProps = {
   name: string;
@@ -144,13 +143,13 @@ export default function FormField({
             disabled={disabled}
             placeholder={placeholder}
             options={{
-              prefix: 'R$ ',
+              prefix: "R$ ",
               numeral: true,
-              numeralThousandsGroupStyle: 'thousand',
+              numeralThousandsGroupStyle: "thousand",
               numeralPositiveOnly: true,
-              numeralDecimalMark: ',',
+              numeralDecimalMark: ",",
               numeralDecimalScale: 2,
-              delimiter: '.',
+              delimiter: ".",
             }}
           />
         );

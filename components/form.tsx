@@ -1,20 +1,22 @@
-import React, {FormEvent, useState} from "react";
+import { FormEvent, useState } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import {discoverSource, formDataToUrlSearchParams} from "../helpers";
-import {LeadsolutionResponse} from "../types";
+import { discoverSource, formDataToUrlSearchParams } from "../helpers";
+import { LeadsolutionResponse } from "../types";
 import FormField from "./form-field";
 
 enum FormState {
   Default,
   Loading,
   Success,
-  Failure
+  Failure,
 }
 
 export default function Form() {
   const [formState, setFormState] = useState<FormState>(FormState.Default);
-  const [failureMessage, setFailureMessage] = useState<string>('Erro ao enviar. Por favor, tente novamente mais tarde.');
+  const [failureMessage, setFailureMessage] = useState<string>(
+    "Erro ao enviar. Por favor, tente novamente mais tarde.",
+  );
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,7 +28,7 @@ export default function Form() {
       const response = await fetch("https://brasil.leadsolution.com.br/leads", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formDataToUrlSearchParams(new FormData(event.currentTarget))
+        body: formDataToUrlSearchParams(new FormData(event.currentTarget)),
       });
 
       const data: LeadsolutionResponse = await response.json();
@@ -41,8 +43,8 @@ export default function Form() {
 
         setFormState(FormState.Success);
       } else {
-        if (data.errors[0] === 'duplicated lead') {
-          setFailureMessage('E-mail já registrado em nossa base.');
+        if (data.errors[0] === "duplicated lead") {
+          setFailureMessage("E-mail já registrado em nossa base.");
         }
 
         setFormState(FormState.Failure);
@@ -66,7 +68,7 @@ export default function Form() {
   }
 
   if (formState === FormState.Failure) {
-    return <Failure message={failureMessage}/>;
+    return <Failure message={failureMessage} />;
   }
 
   return (
@@ -74,7 +76,12 @@ export default function Form() {
       <form role="form" onSubmit={submit}>
         <legend>Lorem ipsum</legend>
 
-        <input type="hidden" name="source" value={discoverSource("TTTTTSX")} required/>
+        <input
+          type="hidden"
+          name="source"
+          value={discoverSource("TTTTTSX")}
+          required
+        />
 
         <FormField name="name" label="Nome" />
         <FormField name="email" label="E-mail" type="email" />
@@ -93,10 +100,10 @@ function Loading() {
     <div className="form-state loading">
       <p>Enviando...</p>
       <div className="distractor">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div />
+        <div />
+        <div />
+        <div />
       </div>
     </div>
   );

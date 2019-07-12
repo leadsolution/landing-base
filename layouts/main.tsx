@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, {useEffect} from "react";
+import { useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import Footer from "../components/footer";
@@ -25,7 +25,7 @@ export default function Main({ title, children }: MainProps) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <link rel="icon" href="/static/img/favicon.png"/>
+        <link rel="icon" href="/static/img/favicon.png" />
         <title>{title}</title>
 
         <script

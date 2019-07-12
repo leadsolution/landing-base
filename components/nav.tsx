@@ -1,10 +1,12 @@
-import React from "react";
-
 export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="#">
-        <img src="/static/img/logo.png" alt="Landing_base" className="img-fluid" />
+        <img
+          src="/static/img/logo.png"
+          alt="Landing_base"
+          className="img-fluid"
+        />
       </a>
 
       <button
@@ -14,12 +16,13 @@ export default function Nav() {
         data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" />
       </button>
 
-      <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <div
+        className="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent">
         <ul className="navbar-nav">
           <li className="nav-item active">
             <a className="nav-link" href="#">

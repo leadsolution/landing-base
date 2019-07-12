@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import { useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import Hero from "../components/hero";
