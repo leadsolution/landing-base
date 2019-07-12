@@ -1,22 +1,22 @@
-import { MouseEvent } from "react";
-import { focusFirst } from "../helpers";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <a
-          href="#"
-          onClick={(e: MouseEvent) => {
-            e.preventDefault();
-            focusFirst();
-          }}>
-          <img
-            src="/static/img/logo.png"
-            alt="Landing_base"
-            className="img-fluid logo"
-          />
-        </a>
+        <Link href="/">
+          <a href="#">
+            <img
+              src="/static/img/logo.png"
+              alt="Landing_base"
+              className="img-fluid logo"
+            />
+          </a>
+        </Link>
+        <br />
+        <Link href="/politica-de-privacidade">
+          <a href="#">Política de privacidade</a>
+        </Link>
       </div>
     </footer>
   );

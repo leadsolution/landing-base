@@ -34,7 +34,7 @@
 
 .header {
   background-color: $primary;
-  padding: $spacer;
+  padding: ($spacer * 2) $spacer;
 
   .navbar {
     .navbar-brand {
@@ -47,7 +47,7 @@
 
 .hero {
   .form-container {
-    padding: $spacer;
+    padding: ($spacer * 2) $spacer;
     background: $light;
     border-radius: $border-radius;
 
@@ -57,7 +57,7 @@
   }
 
   .form-state {
-    padding: $spacer;
+    padding: ($spacer * 2) $spacer;
     background: $light;
     border-radius: $border-radius;
     text-align: center;
@@ -69,13 +69,38 @@
 }
 
 .footer {
-  padding: $spacer;
+  padding: ($spacer * 2) $spacer;
   border-top: 3px solid $primary;
-  background-color: $secondary;
   text-align: center;
 
   .logo {
     max-height: 50px;
+  }
+}
+
+.privacy-policy {
+  padding: ($spacer * 2) $spacer;
+  text-align: justify;
+
+  h1 {
+    text-align: center;
+    color: $primary;
+  }
+
+  h2 {
+    color: $primary;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .loading {
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
   }
 }
 

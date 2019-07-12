@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
-      <a className="navbar-brand" href="#">
-        <img
-          src="/static/img/logo.png"
-          alt="Landing_base"
-          className="img-fluid"
-        />
-      </a>
+      <Link href="/">
+        <a className="navbar-brand" href="#">
+          <img
+            src="/static/img/logo.png"
+            alt="Landing_base"
+            className="img-fluid"
+          />
+        </a>
+      </Link>
 
       <button
         className="navbar-toggler"
