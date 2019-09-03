@@ -53,23 +53,18 @@
   .headline {
     padding: ($spacer * 2);
     background: $primary;
+    color: $white;
   }
 
-  .form-container {
+  .form-state {
     padding: ($spacer * 2);
     background: $dark;
     border-radius: $border-radius;
+    color: $white;
 
     legend {
       text-align: center;
     }
-  }
-
-  .form-state {
-    padding: ($spacer * 2) $spacer;
-    background: $light;
-    border-radius: $border-radius;
-    text-align: center;
 
     p {
       margin: 0;

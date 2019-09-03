@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import { discoverSource, formDataToUrlSearchParams } from "../helpers";
@@ -14,9 +14,17 @@ enum FormState {
 
 export default function Form() {
   const [formState, setFormState] = useState<FormState>(FormState.Default);
-  const [failureMessage, setFailureMessage] = useState<string>(
-    "Erro ao enviar. Por favor, tente novamente mais tarde.",
-  );
+  const [failureMessage, setFailureMessage] = useState<string>("Erro ao enviar. Por favor, tente novamente mais tarde.");
+
+  useEffect(() => {
+    if (window.location.hash.match(/__loading/)) {
+      setFormState(FormState.Loading);
+    } else if (window.location.hash.match(/__success/)) {
+      setFormState(FormState.Success);
+    } else if (window.location.hash.match(/__failure/)) {
+      setFormState(FormState.Failure);
+    }
+  }, []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -72,16 +80,11 @@ export default function Form() {
   }
 
   return (
-    <div className="form-container">
+    <div className="form-state form-container">
       <form role="form" onSubmit={submit}>
         <legend>Lorem ipsum</legend>
 
-        <input
-          type="hidden"
-          name="source"
-          value={discoverSource("TTTTTSX")}
-          required
-        />
+        <input type="hidden" name="source" value={discoverSource("TTTTTSX")} required />
 
         <FormField name="name" label="Nome" />
         <FormField name="email" label="E-mail" type="email" />
@@ -97,7 +100,7 @@ export default function Form() {
 
 function Loading() {
   return (
-    <div className="form-state loading">
+    <div className="form-state loading text-center">
       <p>Enviando...</p>
       <div className="distractor">
         <div />
@@ -111,7 +114,7 @@ function Loading() {
 
 function Success() {
   return (
-    <div className="form-state success">
+    <div className="form-state success text-center">
       <p>Enviado com sucesso.</p>
     </div>
   );
