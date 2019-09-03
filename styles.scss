@@ -47,6 +47,8 @@
 
 .hero {
   padding: ($spacer * 2) 0;
+  background: url(/static/img/hero.png) no-repeat center;
+  background-size: cover;
 
   .headline {
     padding: ($spacer * 2);
