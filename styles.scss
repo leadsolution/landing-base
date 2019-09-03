@@ -46,9 +46,16 @@
 }
 
 .hero {
+  padding: ($spacer * 2) 0;
+
+  .headline {
+    padding: ($spacer * 2);
+    background: $primary;
+  }
+
   .form-container {
-    padding: ($spacer * 2) $spacer;
-    background: $light;
+    padding: ($spacer * 2);
+    background: $dark;
     border-radius: $border-radius;
 
     legend {
