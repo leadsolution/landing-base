@@ -7,6 +7,7 @@ export function discoverSource(defaultSource: string) {
   return defaultSource;
 }
 
+// Tranforma formData em SearchParams
 export function formDataToUrlSearchParams(formData: FormData): URLSearchParams {
   const params = new URLSearchParams();
 
@@ -15,6 +16,20 @@ export function formDataToUrlSearchParams(formData: FormData): URLSearchParams {
   });
 
   return params;
+}
+
+
+// Tranforma Objeto em SearchParams
+export function formObjectToUrlSearchParams(obj:any) {
+  const params = new URLSearchParams();
+    
+  Object.keys(obj).forEach( (key)=>{
+      params.set(key, obj[key])
+      
+  })
+
+  return params;
+
 }
 
 export function focusFirst() {
