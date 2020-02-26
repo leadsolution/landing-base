@@ -1,5 +1,6 @@
 import "cleave.js/dist/addons/cleave-phone.br";
 import Cleave from "cleave.js/react";
+import React from "react";
 
 type FormFieldProps = {
   name: string;
@@ -32,11 +33,13 @@ export default function FormField({
             required={required}
             disabled={disabled}
             placeholder={placeholder}
-            options={{ phone: true, phoneRegionCode: "br" }}
+            options={{phone: true, phoneRegionCode: "br"}}
           />
         );
 
       case "itr":
+      case "tax-document-1":
+      case "cpf":
         return (
           <Cleave
             type="text"
@@ -55,6 +58,8 @@ export default function FormField({
         );
 
       case "ftin":
+      case "tax-document-2":
+      case "cnpj":
         return (
           <Cleave
             type="text"
@@ -97,7 +102,7 @@ export default function FormField({
             required={required}
             disabled={disabled}
             placeholder={placeholder}
-            options={{ blocks: [5, 3], delimiter: "-", numericOnly: true }}
+            options={{blocks: [5, 3], delimiter: "-", numericOnly: true}}
           />
         );
 
