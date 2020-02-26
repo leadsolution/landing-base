@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/img/logo.png" height="300" />
+  <img src="public/assets/img/logo.png" height="300px" />
 </p>
 
 # Landing Base
