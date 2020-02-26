@@ -1,8 +1,8 @@
-import { FormEvent, useState, useEffect } from "react";
+import {FormEvent, useEffect, useState} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import { discoverSource, formDataToUrlSearchParams } from "../helpers";
-import { LeadsolutionResponse } from "../types";
+import {discoverSource, formDataToUrlSearchParams} from "../helpers";
+import {LeadsolutionResponse} from "../types";
 import FormField from "./form-field";
 
 enum FormState {
@@ -53,6 +53,8 @@ export default function Form() {
       } else {
         if (data.errors[0] === "duplicated lead") {
           setFailureMessage("E-mail já registrado em nossa base.");
+        } else {
+          setFailureMessage(data.errors[1]);
         }
 
         setFormState(FormState.Failure);
