@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import React, {useEffect} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import Hero from "../components/hero";
 import Main from "../layouts/main";
-import "../styles.scss";
+import {NextPage} from "next";
 
-export default function Index() {
+const Index: NextPage = () => {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
     ReactPixel.pageView(window.location.pathname);
@@ -13,7 +13,9 @@ export default function Index() {
 
   return (
     <Main title="Landing_base">
-      <Hero />
+      <Hero/>
     </Main>
   );
 }
+
+export default Index;

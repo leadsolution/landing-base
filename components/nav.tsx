@@ -6,7 +6,7 @@ export default function Nav() {
       <Link href="/">
         <a className="navbar-brand" href="#">
           <img
-            src="/static/img/logo.png"
+            src="/assets/img/logo.png"
             alt="Landing_base"
             className="img-fluid"
           />

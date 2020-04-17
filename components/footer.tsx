@@ -7,7 +7,7 @@ export default function Footer() {
         <Link href="/">
           <a href="#">
             <img
-              src="/static/img/logo.png"
+              src="/assets/img/logo.png"
               alt="Landing_base"
               className="img-fluid logo"
             />

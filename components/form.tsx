@@ -1,8 +1,8 @@
 import {FormEvent, useEffect, useState} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
-import {discoverSource, formDataToUrlSearchParams} from "../helpers";
-import {LeadsolutionResponse} from "../types";
+import {discoverSource, formDataToUrlSearchParams} from "../lib/helpers";
+import {LeadsolutionResponse} from "../lib/models";
 import FormField from "./form-field";
 
 enum FormState {
