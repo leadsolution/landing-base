@@ -27,17 +27,17 @@
   },
   "homepage": "https://github.com/leadsolution/landing-base#readme",
   "dependencies": {
-    "@types/cleave.js": "^1.4.1",
-    "@types/next": "^9.0.0",
-    "@types/react": "^16.9.34",
-    "bootstrap": "^4.4.1",
-    "cleave.js": "^1.5.10",
-    "next": "^9.3.6",
-    "node-sass": "^4.14.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-facebook-pixel": "^0.1.1",
-    "react-ga": "^2.7.0",
-    "typescript": "^3.8.3"
+    "@types/cleave.js": "^1.4",
+    "@types/next": "^9.0",
+    "@types/react": "^16.9",
+    "bootstrap": "^4.4",
+    "cleave.js": "^1.5",
+    "next": "^9.3",
+    "node-sass": "^4.14",
+    "react": "^16.13",
+    "react-dom": "^16.13",
+    "react-facebook-pixel": "^0.1",
+    "react-ga": "^2.7",
+    "typescript": "^3.8"
   }
 }
