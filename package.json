@@ -38,6 +38,6 @@
     "react-dom": "^16.13",
     "react-facebook-pixel": "^0.1",
     "react-ga": "^2.7",
-    "typescript": "^3.8"
+    "typescript": "^3.9"
   }
 }
