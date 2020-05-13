@@ -30,7 +30,7 @@
     "@types/cleave.js": "^1.4",
     "@types/next": "^9.0",
     "@types/react": "^16.9",
-    "bootstrap": "^4.4",
+    "bootstrap": "^4.5",
     "cleave.js": "^1.5",
     "next": "^9.4",
     "node-sass": "^4.14",
